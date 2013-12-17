@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF8">
+    <meta charset="utf-8">
+    <title>Bugle stats :: playback</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data analysis of the The Bugle Podcast post-Timesonline">
+    <meta name="Keywords" content="bugle,podcast,bullshit,john oliver,satire,andy zaltzman,comedy,chris,waffles,stats,statistics">
+    <meta name="author" content="GavinB">
+    <meta http-equiv="cache-control" content="no-cache">
+    <!-- Bootstrap -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+      svg.sparkline { width: 700px; height: 120px; font-size: 14px;
+        margin-top: -6px; }
+
+      text.nv-legend-text { font-size: 12px; }
+    </style>
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+  </head>
+  <body class="with-3d-shadow with-transitions">
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Bugle stats > playback</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="active"><a href="./about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div style="padding-bottom: 10px;">
+        <img class="img-responsive img-rounded" src="assets/img/Bugle_s.png" alt="bugle" />
+      </div>
+
+
+      <div>
+        <h4>Technologies used</h4>
+        <p>
+          <ul>
+            <li><a href="http://d3js.org/" target="_blank">d3</a> v3.1.6
+            </li>
+            <li><a href="http://nvd3.org/" target="_blank">nvd3</a> 1.1.15b
+            </li>
+            <li><a href="http://getbootstrap.com/" target="_blank">bootstrap</a> 3.0.3
+            </li>
+          </ul>
+        </p>
+      </div>
+
+      <div>
+          <script src="https://gist.github.com/javouhey/7923891.js"></script>
+      </div>
+
+      <div style="padding-top: 5px; padding-bottom: 5px;">
+        <span id="tooltip" class="alert alert-info" style="visibility: hidden;"></span>
+      </div>
+
+
+      <!-- Site footer -->
+      <div class="footer">
+		<a name="contact"></a>
+        <p>&copy; 2013 <a href="mailto:rubycoder@gmail.com">GavinB</a></p>
+      </div>
+
+    </div> <!-- /container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script async src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  </body>
+</html>

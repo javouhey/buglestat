@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fun statistics about the bugle podcast</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data analysis of the The Bugle Podcast post-Timesonline">
+    <meta name="Keywords" content="bugle,podcast,bullshit,john oliver,satire,andy zaltzman,comedy,chris,waffles,stats,statistics">
+    <meta name="author" content="GavinB">
+    <meta http-equiv="cache-control" content="no-cache">
+    <!-- Bootstrap -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+  </head>
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Bugle stats</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="./about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div style="padding-bottom: 10px;">
+        <img class="img-responsive img-rounded" src="assets/img/Bugle_s.png" alt="bugle" />
+      </div>
+      <div class="jumbotron">
+        <h1>Hello Buglers</h1>
+        <p>Using data from <a href="https://soundcloud.com/the-bugle/" target="_blank">soundcloud</a>, I've performed a statistical analysis on all the episodes generated <em>apr&eacute;s timesonline</em>.</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-6">
+          <h2>Data set</h2>
+          <ul>
+            <li>Data set used was downloaded on <span class="badge">Nov 30th 2013</span></li>
+            <li>Date of first podcast <span class="badge">17th Jan 2012</span></li>
+            <li>Date of last podcast <span class="badge">22nd Nov 2013</span></li>
+          </ul>
+        </div>
+		  
+        <div class="col-lg-6">
+          <h2>Summary</h2>
+          <ul>
+              <li>Number of full episodes: <span class="badge">72</span></li>
+              <li>Number of sub-bugles: <span class="badge">36</span></li>  
+          </ul>
+
+          <h3 style="border-bottom: 1px solid #BBB;">Downloaded</h3>
+
+          <div style="padding-bottom: 5px;">
+              <img src="assets/img/sparkline_downloaded_orig.png" class="img-responsive" alt="Responsive image">
+          </div>
+
+          <p><a class="btn btn-primary" href="./downloaded.html" role="button">See interactive chart &raquo;</a></p>
+
+          <div class="table-responsive" style="padding-left: 5px; padding-right: 5px;">
+            <table class="table table-bordered table-condensed table-hover">
+              <thead>
+                <tr>
+                  <th>Episode type</th>
+                  <th>Downloaded</th>
+                  <th>Duration</th>
+                  <th>Size</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="4" class="text-left text-danger">
+                      Data valid up to <span class="badge">Nov 30th 2013</span>
+                  </td>
+                </tr>
+                <tr>
+				  <td class="text-left">Full</td>
+                  <td>
+                    <ul>
+                        <li>Most = 6900 times (<a href="http://soundcloud.com/the-bugle/bugle-179-playas-gon-play" target="_blank" title="Bugle 179 - Playas Gonna Play. This week - oh PIPA, Republican't candidates and Craptain Italia.">#179</a>)</li>
+                        <li>Least = 1733 times (<a href="http://soundcloud.com/the-bugle/bugle-246-selling-the-drama" target="_blank" title="Bugle 246 - Selling The Drama (And War and Guns And The Planet)">#246</a>)</li>                      
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                        <li>Longest = ~48 mins (<a href="https://soundcloud.com/the-bugle/bugle-200-the-horn-dog" target="_blank" title="Bugle 200 - The Bugle celebrates it's 200th edition with the return of two old favourites. Also in the news, evil bankers are making us learn boring things, and Kim Jong Un reveals his virility. Plus, should we fire missiles at the rain?">#200</a>)</li>
+                        <li>Shortest = ~21 mins (<a href="http://soundcloud.com/the-bugle/bugle-216-were-having-a-baby" target="_blank" title="Bugle 216 - This Bugle was created in five different time zones, spanning 13.5 Earth hours as John records amongst the stars in Los Angeles and Andy chows down on some choice bovine cuts in Calcutta.">#216</a>)</li>
+                    </ul> 
+                  </td>
+                  <td>
+                    <ul>
+                      <li>Fattest = ~67.3 MB (<a href="http://soundcloud.com/the-bugle/bugle-234-nuns-guns-and" target="_blank" title="Bugle 234 - Who the hell are UKIP and what do they want? Is making guns an act of libertarianism and why nuns and nuclear don't mix">#234</a>)</li>
+                      <li>Thinnest = ~27.4 MB (<a href="http://soundcloud.com/the-bugle/bugle-222-halfrica" target="_blank" title="Bugle 222 - Andy and John provide a special update on Africa. A Mali section is not included for technical reasons, but we assure you it was above average in quality.">#222</a>)</li>
+                    </ul> 
+                  </td>
+				</tr>
+                <tr>
+				  <td class="text-left">Sub-bugle</td>
+                  <td>
+                    <ul>
+                        <li>Most = 1147 times (<a href="http://soundcloud.com/the-bugle/hello-buglers" target="_blank" title="Hello Buglers!">2012/01/17</a>)</li>
+                        <li>Least = 583 times (<a href="http://soundcloud.com/the-bugle/bonus-bugle-bugle-requests" target="_blank" title="Bonus Bugle - Bugle requests">2013/11/22</a>)</li>                      
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                        <li>Longest = ~45 mins (<a href="http://soundcloud.com/the-bugle/the-bugle-the-complete-2012" target="_blank" title="The Bugle celebrates the 1st half of 2012, and reveals the new logo">2012/12/21</a>)</li>
+                        <li>Shortest = ~2.17 mins (<a href="http://soundcloud.com/the-bugle/hello-buglers" target="_blank" title="Hello Buglers!">2012/01/17</a>)</li>
+                    </ul> 
+                  </td>
+                  <td>
+                    <ul>
+                      <li>Fattest = ~41.2 MB (<a href="http://soundcloud.com/the-bugle/the-bugle-the-complete-2012" target="_blank" title="The Bugle - The complete 2012 - Part 1">2012/12/21</a>)</li>
+                      <li>Thinnest = ~2.5 MB (<a href="http://soundcloud.com/the-bugle/bugle-elbug-snug-in-a-rug-doug" title="Bugle Elbug Snug in a Rug, Doug" target="_blank">2013/08/30</a>)</li>
+                    </ul> 
+                  </td>
+				</tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <h3 style="border-bottom: 1px solid #BBB;">Playback</h3>
+
+          <div>
+              <img src="assets/img/sparkline_playback_orig.png" class="img-responsive" alt="Responsive image">
+          </div>
+
+          <p><a class="btn btn-primary" href="./playback.html" role="button">See interactive chart &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Site footer -->
+      <div class="footer">
+		<a name="contact"></a>
+        <p>&copy; 2013 <a href="mailto:rubycoder@gmail.com">GavinB</a></p>
+      </div>
+
+    </div> <!-- /container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script async src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  </body>
+</html>

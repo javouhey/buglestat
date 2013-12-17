@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF8">
+    <meta charset="utf-8">
+    <title>Bugle stats :: playback</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data analysis of the The Bugle Podcast post-Timesonline">
+    <meta name="Keywords" content="bugle,podcast,bullshit,john oliver,satire,andy zaltzman,comedy,chris,waffles,stats,statistics">
+    <meta name="author" content="GavinB">
+    <meta http-equiv="cache-control" content="no-cache">
+    <!-- Bootstrap -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="assets/css/nv.d3.css" rel="stylesheet" type="text/css">
+    <style>
+      svg.sparkline { width: 700px; height: 120px; font-size: 14px;
+        margin-top: -6px; }
+
+      text.nv-legend-text { font-size: 12px; }
+    </style>
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+  </head>
+  <body class="with-3d-shadow with-transitions">
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Bugle stats > playback</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="./index.html">Home</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="./about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div style="padding-bottom: 10px;">
+        <img class="img-responsive img-rounded" src="assets/img/Bugle_s.png" alt="bugle" />
+      </div>
+
+
+      <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.1.6/d3.min.js"></script>
+      <script src="assets/js/nv.d3.min.js?v=99"></script>
+      <script src="assets/js/ds_chrono.js"/></script>
+      <!--script src="assets/js/utils.js"--><!--/script-->
+      <!--script src="assets/js/sparkline.js"--><!--/script-->
+      <!--script src="assets/js/sparklinePlus.js"--><!--/script-->
+      <!--script src="assets/js/legend.js"--><!--/script-->
+      <script src="assets/js/bugle.min.js"></script>
+
+      <div>
+        <h4>108 podcasts visualized</h4>
+      </div>
+
+      <div style="padding-top: 5px; padding-bottom: 5px;">
+        <span id="tooltip" class="alert alert-info" style="visibility: hidden;"></span>
+      </div>
+
+      <div>
+        <p><svg id="chart" class="sparkline"></svg></p>
+        <p><svg id="legend"></svg></p>
+      </div>
+
+      <script>
+function keyPlayback() {
+  return [
+    {
+      key: "Latest podcast",
+      desc: "2013/11/22: Bonus Bugle - Bugle requests"
+    },
+    {
+      key: "Least playback",
+      desc: "2012/08/08: Bugle London 2012 #9"
+    },
+    {
+      key: "Most playback",
+      desc: "2012/01/20: Bugle 179 - Playas gon play"
+    }
+  ];
+}
+
+function addLegend() {
+  nv.addGraph({
+    generate: function() {
+      var width = 180,
+          height = 70;
+
+      var chart = nv.models.legend()
+                  .margin({left:50})
+                  .width(width)
+                  .height(height)
+                  .color(["#000000", "#ff0000", "#008000"]);
+      chart.dispatch.on('legendClick', function(d,i) { console.log(d,i) });
+      chart.dispatch.on('legendMouseover', function(d,i) { return tooltip.text(keyPlayback()[i].desc).style("visibility", "visible"); });
+      chart.dispatch.on('legendMouseout', function(d,i) { return tooltip.style("visibility", "hidden"); });
+
+      d3.select('#legend')
+        .attr('width', width)
+        .attr('height', height)
+        .datum(keyPlayback())
+        .call(chart);
+
+      return chart;
+
+    }
+  });
+}
+
+function defaultChartConfig(containerId, data) {
+  nv.addGraph(function() {
+
+    var chart = nv.models.sparklinePlus()
+
+    chart
+      .margin({left:70})
+      .x(function(d,i) { return i })
+      .xTickFormat(function(d) {
+        return d3.time.format('%x')(new Date(data[d].x))
+      })
+
+    d3.select(containerId)
+        .datum(data)
+      .transition().duration(250)
+        .call(chart);
+
+
+    return chart;
+  });
+}
+
+
+var tooltip = d3.select("#tooltip")
+                .style("position", "absolute")
+                .style("z-index", "10")
+                .style("visibility", "hidden")
+                .text("a tooltip");
+
+loadChartData(graphType.PLAYBACK);
+defaultChartConfig("#chart", ds1);
+addLegend();      
+      </script>
+
+      <!-- Site footer -->
+      <div class="footer">
+		<a name="contact"></a>
+        <p>&copy; 2013 <a href="mailto:rubycoder@gmail.com">GavinB</a></p>
+      </div>
+
+    </div> <!-- /container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script async src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  </body>
+</html>
