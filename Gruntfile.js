@@ -1,6 +1,30 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: '<json:package.json>',
+    jshint: {
+      src: ['published/assets/js/ds_chrono.js'],
+      options: {
+        curly: true,
+        eqeqeq: true,
+        immed: true,
+        latedef: true,
+        newcap: true,
+        noarg: true,
+        sub: true,
+        undef: true,
+        boss: true,
+        eqnull: true,
+        browser: true,
+        globals: {
+          require: true,
+          define: true,
+          requirejs: true,
+          describe: true,
+          expect: true,
+          it: true
+        }
+      }
+    },
     concat: {
       js: {
         src: ['published/assets/js/utils.js', 
@@ -26,7 +50,8 @@ module.exports = function(grunt) {
         ]
       }
     }
-  }); 
+  });
+  grunt.loadNpmTasks('grunt-contrib-jshint'); 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
